@@ -34,4 +34,9 @@ public void buttonPostTaskCreate()  {
     SendTaskButton.setVisible(true);
     SendTaskButton.setText("Add task");
 }
+
+public void setTask(String text) {
+    
+}
+
 }
