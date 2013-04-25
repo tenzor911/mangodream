@@ -6,5 +6,11 @@ public class ClassMain {
         CallClassForm.createFormWithComponents();
         ClassDataBaseConnection Conn = new ClassDataBaseConnection();
         Conn.DataBaseConnectionInitiating();
+        
+        
+                ClassModel model = new ClassModel(0);
+                
+                ClassController controller = new ClassController(model, CallClassForm);
+                controller.contol();
 }
 }

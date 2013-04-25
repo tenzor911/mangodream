@@ -1,5 +1,6 @@
 package mangodream;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ClassController {
@@ -12,5 +13,19 @@ public class ClassController {
         this.view = view;
                           
     }
+    
+     public void contol(){        
+        actionListener = new ActionListener() {
+              public void actionPerformed(ActionEvent actionEvent) {                  
+                  linkBtnAndLabel();
+              }
+        };                
+        view.getButton().addActionListener(actionListener);
+    }
+    
+    private void linkBtnAndLabel(){
+        model.incX();                
+        view.setTask(Integer.toString(model.getX()));
+    }    
     
 }

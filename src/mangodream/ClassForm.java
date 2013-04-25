@@ -35,7 +35,12 @@ public void buttonPostTaskCreate()  {
     SendTaskButton.setText("Add task");
 }
 
+public JButton getButton(){
+        return SendTaskButton;
+    }
+
 public void setTask(String text) {
+    TaskFieldView.setText(text);
     
 }
 
