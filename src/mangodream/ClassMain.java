@@ -7,7 +7,6 @@ public class ClassMain {
         ClassDataBaseConnection Conn = new ClassDataBaseConnection();
         Conn.DataBaseConnectionInitiating();
         
-        
                 ClassModel model = new ClassModel(0);
                 
                 ClassController controller = new ClassController(model, CallClassForm);

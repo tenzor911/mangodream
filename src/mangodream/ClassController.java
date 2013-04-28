@@ -10,8 +10,7 @@ public class ClassController {
     
     public ClassController(ClassModel model, ClassForm view){
         this.model = model;
-        this.view = view;
-                          
+        this.view = view;                 
     }
     
      public void contol(){        
@@ -26,6 +25,12 @@ public class ClassController {
     private void linkBtnAndLabel(){
         model.incX();                
         view.setTask(Integer.toString(model.getX()));
+        //model.getValueFromJTextFieldForm(null);
+        view.getSQLQueryFromTextField();
     }    
+    
+    private void getSQlQuery() {
+      
+    }
     
 }
