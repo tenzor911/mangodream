@@ -3,6 +3,8 @@ package mangodream;
 public class ClassModel {
     
     private int x;
+    private String y = "";
+    
     private String SQL_Query;
     
     public ClassModel() {
@@ -21,12 +23,21 @@ public class ClassModel {
         return x;
     }
     
-     public void getValueFromJTextFieldForm(String SQL_Query_From_From){
-        SQL_Query = SQL_Query_From_From;
+     //public void getValueFromJTextFieldForm(String SQL_Query_From_From){
+       // SQL_Query = SQL_Query_From_From;
+    //}
+    
+    /*public String insertDataBaseRecord() {
+        return SQL_Query;
+    }*/
+ 
+    public void my_x(String z) {
+        y = z;
+           System.out.println(y + " return a");
     }
     
-    public String insertDataBaseRecord() {
-        return SQL_Query;
+    public String my_y() {
+        return y;
     }
 }
 

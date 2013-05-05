@@ -23,10 +23,14 @@ public class ClassController {
     }
     
     private void linkBtnAndLabel(){
-        model.incX();                
-        view.setTask(Integer.toString(model.getX()));
-        //model.getValueFromJTextFieldForm(null);
+        //model.incX();                
+        //view.setTask(Integer.toString(model.getX()));
         view.getSQLQueryFromTextField();
+        model.my_x(view.SetTextIntoField());
+        
+        view.SetText(model.my_y());
+        //model.my_x("sddsf");
+        //view.getSQLQueryFromTextField();
     }    
     
     private void getSQlQuery() {

@@ -9,6 +9,9 @@ public class ClassForm  {
     private JFrame MainFormView = new JFrame("Testing Windows");
     private JButton SendTaskButton = new JButton();
     private JTextField TaskEnteringField = new JTextField();
+    
+    private String a = null;
+    private JTextField TaskSetField = new JTextField();
       
 public void createFormWithComponents()  {
     MainFormView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,12 +24,19 @@ public void createFormWithComponents()  {
     buttonPostTaskCreate();
     MainFormView.add(TaskEnteringField);
     MainFormView.add(SendTaskButton);
+    
+    MainFormView.add(TaskSetField);
 }
 
 public void textfieldCreate()  {
     TaskEnteringField.setHorizontalAlignment(JTextField.LEFT);
     TaskEnteringField.setBounds(5, 10, 360, 20);
     TaskEnteringField.setVisible(true);  
+    TaskEnteringField.setText("text");
+    
+    TaskSetField.setHorizontalAlignment(JTextField.LEFT);
+    TaskSetField.setBounds(5, 30, 360, 20);
+    TaskSetField.setVisible(true);  
 } 
 
 public void buttonPostTaskCreate()  {
@@ -39,11 +49,22 @@ public JButton getButton(){
     return SendTaskButton;
 }
 
-public void setTask(String text) {
-    TaskEnteringField.setText(text);
-}
+//public void setTask(String text) {
+ //   TaskEnteringField.setText(text);
+//}
 
 public void getSQLQueryFromTextField() {
-    TaskEnteringField.getText();
+    String a = TaskEnteringField.getText();
+    System.out.println(a);
+    
 }
+
+public String SetTextIntoField() {
+    return a;
+}
+
+public void SetText(String text_val) {
+    TaskSetField.setText(text_val);
+}
+
 }
