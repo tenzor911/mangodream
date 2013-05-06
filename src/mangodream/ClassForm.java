@@ -54,7 +54,7 @@ public JButton getButton(){
 //}
 
 public void getSQLQueryFromTextField() {
-    String a = TaskEnteringField.getText();
+    a = TaskEnteringField.getText();
     System.out.println(a);
     
 }
