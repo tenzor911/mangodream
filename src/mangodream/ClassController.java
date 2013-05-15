@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class ClassController {
     private ClassModel model;
     private ClassForm view;
+    private ClassSQLQueries sqlqueries;
     private ActionListener actionListener;
     
     public ClassController(ClassModel model, ClassForm view){
@@ -23,14 +24,10 @@ public class ClassController {
     }
     
     private void linkBtnAndLabel(){
-        //model.incX();                
-        //view.setTask(Integer.toString(model.getX()));
         view.getSQLQueryFromTextField();
         model.my_x(view.SetTextIntoField());
-        
         view.SetText(model.my_y());
-        //model.my_x("sddsf");
-        //view.getSQLQueryFromTextField();
+        
     }    
     
     private void getSQlQuery() {

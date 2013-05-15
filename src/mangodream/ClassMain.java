@@ -1,8 +1,12 @@
 package mangodream;
 
+import java.sql.SQLException;
+
 public class ClassMain {
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
         ClassForm CallClassForm = new ClassForm();
+        ClassSQLQueries SQL = new ClassSQLQueries();
+        SQL.sqlQueryGetTaskId();
         CallClassForm.createFormWithComponents();
         ClassDataBaseConnection Conn = new ClassDataBaseConnection();
         Conn.DataBaseConnectionInitiating();
