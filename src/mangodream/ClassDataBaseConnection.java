@@ -8,7 +8,7 @@ public class ClassDataBaseConnection {
     private String dbHost = "jdbc:derby://localhost:1527/mangodream";
     private String uName = "root";
     private String uPass = "root";
-    public Connection dbConnection = null;
+    protected Connection dbConnection = null;
     
     void DataBaseConnectionInitiating() throws ClassNotFoundException {
         
@@ -16,7 +16,7 @@ public class ClassDataBaseConnection {
             
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             dbConnection = DriverManager.getConnection(dbHost, uName, uPass);
-            System.out.println("Connect to " + dbConnection.getCatalog() + " a success!");
+            System.out.println("Connect to " + dbConnection.getClientInfo() + " a success!");
             
         }
         
@@ -27,4 +27,8 @@ public class ClassDataBaseConnection {
             
         }
     }  
+    
+    public Connection DBCon() {
+        return dbConnection;
+    }
 }

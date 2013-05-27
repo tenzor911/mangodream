@@ -10,7 +10,7 @@ public class ClassForm  {
     private JButton SendTaskButton = new JButton();
     private JTextField TaskEnteringField = new JTextField();
     
-    private String a = null;
+    private String ValueFromTextField = null;
     private JTextField TaskSetField = new JTextField();
       
 public void createFormWithComponents()  {
@@ -53,14 +53,13 @@ public JButton getButton(){
  //   TaskEnteringField.setText(text);
 //}
 
-public void getSQLQueryFromTextField() {
-    a = TaskEnteringField.getText();
-    System.out.println(a);
+public void getValueFromTextField() {
+    ValueFromTextField = TaskEnteringField.getText();
     
 }
 
-public String SetTextIntoField() {
-    return a;
+public String setValueFromTextField() {
+    return ValueFromTextField;
 }
 
 public void SetText(String text_val) {

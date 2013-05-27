@@ -6,34 +6,42 @@ import java.sql.Statement;
 
 public class ClassSQLQueries {
     
-ClassDataBaseConnection ConnectionToDataBase = new ClassDataBaseConnection();
+ClassDataBaseConnection ConnectionToDataBase;
 
 private String DataFromTextField;
+private String NextIdToInsert;
+
+    public ClassSQLQueries() {
+        this.ConnectionToDataBase = new ClassDataBaseConnection();
+    }
 
 public void takingValueFromTextField(String TextFieldValue) {
     DataFromTextField = TextFieldValue;
+    //System.out.println(DataFromTextField);
 }
 
 public String ReturningValueIntoSqlQuery() {
     return DataFromTextField;
+    
 }
 
-public void sqlQueryGetTaskId() throws ClassNotFoundException, SQLException {
+/*public String sqlQueryGetTaskId() throws ClassNotFoundException, SQLException {
     ConnectionToDataBase.DataBaseConnectionInitiating();
     Statement StatementForSelectQuery = ConnectionToDataBase.dbConnection.createStatement();
-    ResultSet ResultSelectSqlQuery = StatementForSelectQuery.executeQuery("SELECT ID_POSTED_TASK FROM APP.POSTED_TASKS");
+    ResultSet ResultSelectSqlQuery = StatementForSelectQuery.executeQuery("SELECT COUNT(ID_POSTED_TASK) FROM APP.POSTED_TASKS");
+    while (ResultSelectSqlQuery.next()) {
     try {
-        System.out.println(ResultSelectSqlQuery.first());    
+        System.out.println(ResultSelectSqlQuery.getString(1));    
+        String NextIdToInsert = ResultSelectSqlQuery.getString(1);
     }catch(Exception ex) {
     System.out.println("0");
 }
-}
+    }
+    return NextIdToInsert;
+}*/
 
-public void sqlQueryInsertTask(String DataFromTextField) throws ClassNotFoundException, SQLException {
-    ConnectionToDataBase.DataBaseConnectionInitiating();
+public void sqlQueryInsertTask() throws ClassNotFoundException, SQLException {
     Statement StatementForInsertQuery = ConnectionToDataBase.dbConnection.createStatement();
-    
-    StatementForInsertQuery.executeQuery("INSERT INTO APP.POSTED_TASKS (ID_POSTED_TASK, NAME_POSTED_TASK, TIME_WAS_POSTED_POSTED_TASK) VALUES (4, " + DataFromTextField + ", CURRENT_TIME)");
+    StatementForInsertQuery.executeQuery("INSERT INTO APP.POSTED_TASKS (NAME_OF_POSTED_TASK, CONTAINMENT_OF_POSTED_TASK, TIME_TASK_WAS_POSTED) VALUES ('234234234234', 'testing', CURRENT_TIMESTAMP)");
 }
-
 }
